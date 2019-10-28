@@ -2,12 +2,17 @@
   "name": "angular-application",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build:prod": "ng build --prod",
+    "build:pub": "ng build --prod --output-path docs --base-href https://github.com/msalinasf/curso-angular.git/",
+    "e2e": "ng e2e",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ng": "ng",
+    "http-server": "http-server ./dist/angular-board/ -c-1 -p4271 -a localhost -o",
+    "pub": "npm run build:pub && npm run push",
+    "push": "git add * && git commit -m 'pub' && git push",
+    "start:prod": "npm run build:prod && npm run http-server",
+    "start": "ng serve --aot -o --port 4200",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
