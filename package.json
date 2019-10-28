@@ -9,7 +9,7 @@
     "ng": "ng",
     "http-server": "http-server ./dist/angular-board/ -c-1 -p4271 -a localhost -o",
     "pub": "npm run build:pub && npm run push",
-    "push": "git add * && git commit -m 'pub' && git push",
+    "push": "git add . && git commit -m 'pub' && git push",
     "start:prod": "npm run build:prod && npm run http-server",
     "start": "ng serve --aot -o --port 4200",
     "test": "ng test"
