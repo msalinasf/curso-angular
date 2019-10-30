@@ -4,13 +4,15 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { MainComponent } from './layout/main/main.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, MainComponent, FooterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     LayoutComponent

@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  appName: 'Training Projects',
+  projects: [
+    { id: 0, name: 'Learn Angular' },
+    { id: 1, name: 'Develop My Dream app' },
+    { id: 2, name: 'Travel around the world' },
+    { id: 3, name: 'Clean my room' }
+  ]
 };
 
 /*

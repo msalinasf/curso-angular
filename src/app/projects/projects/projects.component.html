@@ -1,0 +1,11 @@
+<header class="sticky">
+  <a routerLink="new"> <span>New</span> </a>
+</header>
+<table class="table table-striped">
+  <tr *ngFor="let project of projects">
+    <td>{{project.id}}</td>
+    <td>{{project.name}}</td>
+    <td><a routerLink="view/{{project.id}}" >Ver</a> </td>
+  </tr>
+</table>
+<router-outlet></router-outlet>
