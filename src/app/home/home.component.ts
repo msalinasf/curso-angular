@@ -9,13 +9,13 @@ import { environment } from '../../environments/environment';
 export class HomeComponent implements OnInit {
 
   private projects = environment.projects;
-  public countProjects = 3;
+  public numProjects: number;
 
   constructor() { }
 
   ngOnInit() {
 
-
+    this.numProjects = this.projects.length;
 
   }
 

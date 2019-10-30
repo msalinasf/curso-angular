@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { Project } from './models/project.model';
 
 @Component({
   selector: 'app-projects',
@@ -8,11 +9,16 @@ import { environment } from '../../../environments/environment';
 })
 export class ProjectsComponent implements OnInit {
 
-  public projects = environment.projects;
+  public projects: Project[];
 
   constructor() { }
 
   ngOnInit() {
+
+    this.projects = environment.projects;
+
   }
 
+
 }
+
