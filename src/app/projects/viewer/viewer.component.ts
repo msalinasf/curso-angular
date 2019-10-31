@@ -15,7 +15,7 @@ export class ViewerComponent implements OnInit {
   public projects: Project[];
 
   constructor(activateRoute: ActivatedRoute) {
-    this.projectID = activateRoute.snapshot.params.id;
+    this.projectID = parseInt(activateRoute.snapshot.params.id, 10);
     this.projects = environment.projects;
     this.project = this.projects[this.projects.map((element) => element.id).indexOf(this.projectID)];
   }
