@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../models/project.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-new',
@@ -15,13 +16,19 @@ export class NewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    this.projects = environment.projects;
     this.numProjects = this.projects.length;
+
+    this.project = {
+      id: this.numProjects,
+      name: ''
+    };
 
   }
 
   public createProject() {
-    this.projects.push(this.project);
+    this.projects.push({ ...this.project });
+    environment.projects = this.projects;
   }
 
 }

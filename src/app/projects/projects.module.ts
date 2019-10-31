@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
-import { ViewerComponent } from './projects/viewer/viewer.component';
-import { NewComponent } from './projects/new/new.component';
+import { ViewerComponent } from './viewer/viewer.component';
+import { NewComponent } from './new/new.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 

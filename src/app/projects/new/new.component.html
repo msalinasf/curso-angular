@@ -1,7 +1,5 @@
 <h3>Crear nuevo proyecto</h3>
 
-<p>El número de proyectos es {{ numProjects }}</p>
-
 <form>
 
   <div class="form-group">
@@ -15,7 +13,7 @@
   </div>
 
   <div class="text-right">
-    <div class="btn btn-secondary mr-3" routerLink="projects" routerLinkActive="router-link-active">Volver</div>
+    <button type="button" class="btn btn-secondary mr-3" routerLink="/projects">Volver</button>
     <input type="button" class="btn btn-primary" (click)="createProject()" value="Guardar">
   </div>
 

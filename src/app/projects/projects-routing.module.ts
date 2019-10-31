@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProjectsComponent } from './projects/projects.component';
-import { NewComponent } from './projects/new/new.component';
-import { ViewerComponent } from './projects/viewer/viewer.component';
+import { NewComponent } from './new/new.component';
+import { ViewerComponent } from './viewer/viewer.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: ProjectsComponent,
-    children: [
-      {
-        path: 'view/:id',
-        component: ViewerComponent
-      },
-      {
-        path: 'new',
-        component: NewComponent
-      }
-    ]
+  },
+  {
+    path: 'view/:id',
+    component: ViewerComponent
+  },
+  {
+    path: 'new',
+    component: NewComponent
   }
 ];
 
