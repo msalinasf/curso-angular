@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../models/project.model';
 import { environment } from '../../../environments/environment';
+import { ProjectsService } from '../projects.service';
 
 @Component({
   selector: 'app-new',
@@ -9,26 +10,17 @@ import { environment } from '../../../environments/environment';
 })
 export class NewComponent implements OnInit {
 
-  public project: Project;
   public projects: Project[];
-  public numProjects: number;
 
-  constructor() { }
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
     this.projects = environment.projects;
-    this.numProjects = this.projects.length;
-
-    this.project = {
-      id: this.numProjects,
-      name: ''
-    };
-
   }
 
-  public createProject() {
-    this.projects.push({ ...this.project });
-    environment.projects = this.projects;
+  public createProject(project: Project) {
+
+    this.projectsService.CreateProject(project);
   }
 
 }

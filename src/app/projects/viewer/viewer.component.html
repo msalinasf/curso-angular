@@ -1,13 +1,1 @@
-<div>
-  <h3>Viendo proyecto con ID {{ project.id }}</h3>
-  <table class="table table-striped">
-    <tr>
-      <td>{{ project.id }}</td>
-      <td>{{ project.name }}</td>
-    </tr>
-  </table>
-
-  <div class="text-right">
-    <button type="button" class="btn btn-secondary mr-3" routerLink="/projects">Volver</button>
-  </div>
-</div>
+<app-viewer-project-form [project]="project"></app-viewer-project-form>
