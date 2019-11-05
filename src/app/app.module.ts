@@ -18,7 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     CoreModule,
     HomeModule,
-    ProjectsModule
+    ProjectsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

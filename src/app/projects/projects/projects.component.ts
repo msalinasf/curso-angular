@@ -11,11 +11,12 @@ export class ProjectsComponent implements OnInit {
 
   public projects: Project[];
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor(private projectsService: ProjectsService) {
+  }
 
   ngOnInit() {
 
-    this.projects = this.projectsService.projects;
+    this.projects = this.projectsService.getAllData();
 
   }
 

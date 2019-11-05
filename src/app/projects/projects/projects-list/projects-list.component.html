@@ -1,11 +1,14 @@
 <h3>Proyectos actuales</h3>
-<table class="table table-striped">
+<table *ngIf="projects.length > 0; else noprojects" class="table table-striped">
   <tr *ngFor="let project of projects">
     <td>{{project.id}}</td>
     <td>{{project.name}}</td>
     <td><a routerLink="view/{{project.id}}" >Ver</a> </td>
   </tr>
 </table>
+<ng-template #noprojects>
+  <h5>Sin proyectos actualmente</h5>
+</ng-template>
 <div class="text-right">
     <div class="btn btn-primary" routerLink="new">Nuevo proyecto</div>
 </div>

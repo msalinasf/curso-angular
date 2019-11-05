@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
@@ -14,12 +15,21 @@ import { NewProjectFormComponent } from './new/new-project-form/new-project-form
 
 
 @NgModule({
-  declarations: [ProjectsComponent, ViewerComponent, NewComponent, FilterProjectsFormComponent, ProjectsListComponent, ViewerProjectFormComponent, NewProjectFormComponent],
+  declarations: [
+    ProjectsComponent,
+    ViewerComponent,
+    NewComponent,
+    FilterProjectsFormComponent,
+    ProjectsListComponent,
+    ViewerProjectFormComponent,
+    NewProjectFormComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
     ProjectsRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class ProjectsModule { }

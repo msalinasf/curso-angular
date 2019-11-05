@@ -13,6 +13,10 @@ export class ProjectsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (this.projects === null) {
+      this.projects = [];
+    }
+
   }
 
 }
