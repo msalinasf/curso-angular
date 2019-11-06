@@ -9,7 +9,6 @@ import { Project } from '../../models/project.model';
 export class NewProjectFormComponent implements OnInit {
 
   @Input() public projects: Project[];
-  @Input() public string: string;
   @Output() public projectEmitter = new EventEmitter<Project>();
   public project: Project;
 

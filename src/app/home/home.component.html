@@ -1,1 +1,1 @@
-<app-dashboard [numProjects]="numProjects"></app-dashboard>
+<app-dashboard [numProjects]="(projects$ | async)?.length"></app-dashboard>
