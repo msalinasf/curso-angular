@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build:prod": "ng build --prod",
-    "build:pub": "ng build --prod --output-path docs --base-href https://msalinasf.github.io/curso-angular/",
+    "build:pub": "ng build --prod --output-path docs --base-href https://msalinasf.github.io/curso-angular/.",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
