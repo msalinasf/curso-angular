@@ -1,9 +1,9 @@
 <h3>Proyectos actuales</h3>
 <table *ngIf="projects.length > 0; else noprojects" class="table table-striped">
-  <tr *ngFor="let project of projects">
+  <tr *ngFor="let project of projects; let key=index">
     <td>{{project.id}}</td>
     <td>{{project.name}}</td>
-    <td><a routerLink="view/{{project.id}}" >Ver</a> </td>
+    <td><a routerLink="view/{{key}}">Ver</a></td>
   </tr>
 </table>
 <ng-template #noprojects>

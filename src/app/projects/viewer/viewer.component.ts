@@ -13,27 +13,18 @@ import { map, tap, filter, share } from 'rxjs/operators';
 export class ViewerComponent implements OnInit {
 
   public projectID: number;
-  // public projects$: Observable<any>;
-  public project$: Observable<any>;
-  public project: Project;
-  public projects: Project[];
+  public project$: Observable<Project>;
+  // public project: Project;
+  // public projects: Project[];
 
   constructor(private projectsService: ProjectsService, activateRoute: ActivatedRoute) {
     this.projectID = parseInt(activateRoute.snapshot.params.id, 10);
-    // this.project$ = this.projectsService.getProjectData(this.projectID);
     /* this.project$ = this.projectsService.getAllData()
-      .pipe(tap(pr => console.log(pr)), filter(pr => pr.id === 1), tap(pr => console.log(pr))); */
-    // this.projects$ = this.projectsService.getAllData().pipe(share());
-    // this.project$ = this.projects$.pipe(tap(pr => console.log(pr)), filter(pr => pr > 0), tap(pr => console.log(pr)));
-    this.project$ = this.projectsService.getAllData()
-                      .pipe(map(pr => Object.values(pr).map(p => {console.log(p); if (p.id === this.projectID) {this.project = p}})));
+                      .pipe(map(pr => Object.values(pr).map(p => {console.log(p); if (p.id === this.projectID) { this.project = p; }}))); */
+    this.project$ = this.projectsService.getProjectData(this.projectID);
   }
 
   ngOnInit() {
   }
-
-  /* public getProject(data) {
-    return Object.values(data).map(value => { if (value.id === this.projectID) { return value; } } );
-  } */
 
 }

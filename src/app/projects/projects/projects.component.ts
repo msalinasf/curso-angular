@@ -11,14 +11,13 @@ import { Observable } from 'rxjs';
 export class ProjectsComponent implements OnInit {
 
   // public projects: Project[];
-  public projects$: Observable<any> = null;
+  public projects$: Observable<Project[]> = null;
 
   constructor(private projectsService: ProjectsService) {
   }
 
   ngOnInit() {
-    this.projects$ = this.projectsService.getAllData();
-    // this.projects$ = this.projectsService.projects$;
+    this.projects$ = this.projectsService.projects$;
   }
 
 

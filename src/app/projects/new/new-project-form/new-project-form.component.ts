@@ -8,19 +8,16 @@ import { Project } from '../../models/project.model';
 })
 export class NewProjectFormComponent implements OnInit {
 
-  @Input() public projects: Project[];
   @Output() public projectEmitter = new EventEmitter<Project>();
   public project: Project;
 
   constructor() { }
 
   ngOnInit() {
-
     this.project = {
-      id: this.projects.length,
+      id: null,
       name: ''
     };
-
   }
 
   public saveData() {

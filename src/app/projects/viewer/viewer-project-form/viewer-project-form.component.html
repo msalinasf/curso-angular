@@ -1,15 +1,16 @@
-<div>
-  <h3>Viendo proyecto con ID {{ project2.id }}</h3>
+<div *ngIf="project != null; else noproject">
+  <h3>Viendo proyecto con ID {{ projectID }}</h3>
   <table class="table table-striped">
     <tr>
-      <td>{{ project2.id }}</td>
-      <td>{{ project2.name }}</td>
+      <td>{{ project.id }}</td>
+      <td>{{ project.name }}</td>
     </tr>
   </table>
-
-  <div class="text-right">
-    <button type="button" class="btn btn-secondary mr-3" routerLink="/projects">Volver</button>
-  </div>
 </div>
+<ng-template #noproject>
+    <h3>No existe ningún proyecto con ID {{ projectID }}</h3>
+</ng-template>
 
-<!-- <pre>{{ project2 | json }}</pre> -->
+<div class="text-right">
+  <button type="button" class="btn btn-secondary mr-3" routerLink="/projects">Volver</button>
+</div>

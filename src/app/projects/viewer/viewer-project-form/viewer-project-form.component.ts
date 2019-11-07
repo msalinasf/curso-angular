@@ -8,8 +8,9 @@ import { Project } from '../../models/project.model';
 })
 export class ViewerProjectFormComponent implements OnInit {
 
-  @Input() public project: any;
-  @Input() public project2: any;
+  @Input() public project: Project;
+  @Input() public projectID: number;
+  // @Input() public project2: any;
 
   constructor() { }
 
