@@ -10,7 +10,6 @@ export class ViewerProjectFormComponent implements OnInit {
 
   @Input() public project: Project;
   @Input() public projectID: number;
-  // @Input() public project2: any;
 
   constructor() { }
 

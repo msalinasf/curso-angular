@@ -1,6 +1,6 @@
 <h3>Proyectos actuales</h3>
-<table *ngIf="projects.length > 0; else noprojects" class="table table-striped">
-  <tr *ngFor="let project of projects; let key=index">
+<table *ngIf="(projects$ | async)?.length > 0; else noprojects" class="table table-striped">
+  <tr *ngFor="let project of (projects$ | async); let key=index">
     <td>{{project.id}}</td>
     <td>{{project.name}}</td>
     <td><a routerLink="view/{{key}}">Ver</a></td>

@@ -13,7 +13,6 @@ export class ProjectsService {
   // public projects: any = null;
   private urlapi = 'https://api-base.herokuapp.com/api/pub/projects';
   public projects$: Observable<Project[]>;
-  public project$: Observable<any> = null;
 
   constructor(private httpClient: HttpClient, private router: Router) {
     this.projects$ = this.getAllData();
