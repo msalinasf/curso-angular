@@ -12,22 +12,19 @@ export class ProjectsService {
 
   // public projects: any = null;
   private urlapi = 'https://api-base.herokuapp.com/api/pub/projects';
-  public projects$: Observable<Project[]> = null;
+  public projects$: Observable<Project[]>;
   public project$: Observable<any> = null;
 
   constructor(private httpClient: HttpClient, private router: Router) {
     this.projects$ = this.getAllData();
   }
 
-  public getAllData() {
+  private getAllData() {
     return this.httpClient.get<Project[]>(this.urlapi).pipe(map(this.transformData), share());
   }
 
   public getProjectData(projectID: any) {
-
-    // return this.projects$.pipe(map(pr => pr.filter(p => p.id === projectID)));
     return this.projects$.pipe(map(pr => pr[projectID]));
-
   }
 
   public CreateProject(project: Project) {
@@ -37,10 +34,15 @@ export class ProjectsService {
   }
 
   private transformData(serverValues) {
-    return Object.keys(serverValues).map(key => ({
-      id: serverValues[key].id,
-      name: serverValues[key].name,
-    }));
+    if (serverValues !== null) {
+      return Object.keys(serverValues).map(key => ({
+        id: serverValues[key].id,
+        name: serverValues[key].name,
+      }));
+    } else {
+      return [];
+    }
+
   }
 
 }

@@ -8,15 +8,11 @@ import { Project } from '../../models/project.model';
 })
 export class ProjectsListComponent implements OnInit {
 
-  @Input() public projects: Project[];
+  @Input() public projects: Project[] = [];
 
   constructor() { }
 
   ngOnInit() {
-    if (this.projects === null) {
-      this.projects = [];
-    }
-
   }
 
 }
