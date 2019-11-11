@@ -19,6 +19,10 @@ export class ProjectsComponent implements OnInit {
     this.projects$ = this.projectsService.projects$;
   }
 
+  public searchProjects(value: string) {
+    this.projects$ = this.projectsService.searchProject(value);
+  }
+
 
 }
 

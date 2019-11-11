@@ -32,6 +32,10 @@ export class ProjectsService {
         .subscribe(response => { this.router.navigate(['/projects']); });
   }
 
+  public searchProject(value: string) {
+    return this.projects$.pipe(map(pr => {return Object.values(pr).filter(p => p.name.includes(value))}));
+  }
+
   private transformData(serverValues) {
     if (serverValues !== null) {
       return Object.keys(serverValues).map(key => ({

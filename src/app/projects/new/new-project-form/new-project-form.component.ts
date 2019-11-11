@@ -10,10 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class NewProjectFormComponent implements OnInit {
 
   @Output() public projectEmitter = new EventEmitter<Project>();
-  public project: Project;
   public formGroup: FormGroup;
-  public errorID: string = 'hidden';
-
 
   constructor(private formBuilder: FormBuilder) { }
 

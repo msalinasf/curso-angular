@@ -1,1 +1,6 @@
-<p>filter-projects-form works!</p>
+<form [formGroup]="formGroup">
+    <div class="form-group col-6">
+      <label for="nameSearch">Buscar por nombre</label>
+      <input type="text" name="nameSearch" class="form-control" formControlName="nameSearch" placeholder="Nombre" (keyup)="searchProjects()">
+    </div>
+</form>

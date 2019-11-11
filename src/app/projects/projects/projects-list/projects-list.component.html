@@ -1,16 +1,18 @@
 <h3>Proyectos actuales</h3>
-<table *ngIf="(projects$ | async)?.length > 0; else noprojects" class="table table-striped">
-  <tr *ngFor="let project of (projects$ | async); let key=index">
-    <td>{{project.id}}</td>
-    <td>{{project.name}}</td>
-    <td><a routerLink="view/{{key}}">Ver</a></td>
-  </tr>
-</table>
-<ng-template #noprojects>
-  <div class="alert alert-warning text-center">
-    Sin proyectos actualmente
+  <div *ngIf="(projects$ | async)">
+  <table *ngIf="(projects$ | async)?.length > 0; else noprojects" class="table table-striped">
+    <tr *ngFor="let project of (projects$ | async); let key=index">
+      <td>{{project.id}}</td>
+      <td>{{project.name}}</td>
+      <td><a routerLink="view/{{key}}">Ver</a></td>
+    </tr>
+  </table>
+  <ng-template #noprojects>
+    <div class="alert alert-warning text-center">
+      No hay proyectos
+    </div>
+  </ng-template>
+  <div class="text-right">
+      <button type="button" class="btn btn-primary" routerLink="new">Nuevo proyecto</button>
   </div>
-</ng-template>
-<div class="text-right">
-    <button type="button" class="btn btn-primary" routerLink="new">Nuevo proyecto</button>
 </div>
