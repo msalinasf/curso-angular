@@ -1,5 +1,5 @@
 <h3>Proyectos actuales</h3>
-  <div *ngIf="(projects$ | async)">
+<div *ngIf="(projects$ | async)">
   <table *ngIf="(projects$ | async)?.length > 0; else noprojects" class="table table-striped">
     <tr *ngFor="let project of (projects$ | async); let key=index">
       <td>{{project.id}}</td>
