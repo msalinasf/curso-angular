@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Project } from '../../models/project.model';
 import { Observable } from 'rxjs';
 
@@ -10,10 +10,14 @@ import { Observable } from 'rxjs';
 export class ProjectsListComponent implements OnInit {
 
   @Input() public projects$: Observable<Project[]>;
+  @Output() public deleteAllProjects = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  public deleteProjects() {
+    this.deleteAllProjects.emit();
+  }
 }

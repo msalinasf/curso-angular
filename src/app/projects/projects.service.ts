@@ -18,6 +18,12 @@ export class ProjectsService {
     this.projects$ = this.getAllData();
   }
 
+  public deleteProjects() {
+    this.httpClient
+        .delete(this.urlapi)
+        .subscribe(() => {location.reload()});
+  }
+
   private getAllData() {
     return this.httpClient.get<Project[]>(this.urlapi).pipe(map(this.transformData), share());
   }
