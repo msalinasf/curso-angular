@@ -19,9 +19,8 @@ export class ProjectsService {
   }
 
   public deleteProjects() {
-    this.httpClient
-        .delete(this.urlapi)
-        .subscribe(() => {location.reload()});
+    return this.httpClient
+        .delete<Project[]>(this.urlapi);
   }
 
   private getAllData() {

@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   public deleteProjects() {
-    this.projectsService.deleteProjects();
+    this.projects$ = this.projectsService.deleteProjects();
   }
 
   public searchProjects(value: string) {
